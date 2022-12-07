@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "942824421972",
+    "project_id": "cskh-vnpt-96eb7",
+    "storage_bucket": "cskh-vnpt-96eb7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:942824421972:android:106ab92fda0cee08ec8bc1",
+        "android_client_info": {
+          "package_name": "com.vnptsonla.cskh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "942824421972-ki0e60ovsjmokqed8ata2doesp7l4r17.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPEeiUX6Tdp6KdZf_13UJyTitPH5-2TJk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "942824421972-ki0e60ovsjmokqed8ata2doesp7l4r17.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
