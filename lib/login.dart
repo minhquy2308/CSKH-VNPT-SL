@@ -98,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
           roleid = jsondata["role_id"];
           if (jsondata["sdt"] != null) {
             sdt = jsondata["sdt"];
-          }else{
+          } else {
             sdt = "";
           }
           if (otpAuth) {
@@ -117,14 +117,20 @@ class _LoginScreenState extends State<LoginScreen> {
         } else {
           showprogress = false; //don't show progress indicator
           error = true;
-          errormsg = "Something went wrong.";
+          errormsg = "Có lỗi xảy ra";
+          if (mounted) {
+            errmsg(context, errormsg);
+          }
         }
       }
     } else {
       setState(() {
         showprogress = false; //don't show progress indicator
         error = true;
-        errormsg = "Error during connecting to server.";
+        errormsg = "Lỗi kết nối tới máy chủ";
+        if (mounted) {
+          errmsg(context, errormsg);
+        }
       });
     }
   }
@@ -158,6 +164,9 @@ class _LoginScreenState extends State<LoginScreen> {
           showprogress = false; //don't show progress indicator
           error = true;
           errormsg = "Something went wrong.";
+          if (mounted) {
+            errmsg(context, errormsg);
+          }
         }
       }
     } else {
@@ -165,6 +174,9 @@ class _LoginScreenState extends State<LoginScreen> {
         showprogress = false; //don't show progress indicator
         error = true;
         errormsg = "Error during connecting to server.";
+        if (mounted) {
+          errmsg(context, errormsg);
+        }
       });
     }
   }
@@ -213,7 +225,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               updateSDT();
                               if (success) {
                                 Future.delayed(const Duration(seconds: 1), () {
-                                  otpmsg(context, 'Cập nhật số điện thoại thành công!');
+                                  otpmsg(context,
+                                      'Cập nhật số điện thoại thành công!');
                                 });
                               }
                             } else {
@@ -309,6 +322,9 @@ class _LoginScreenState extends State<LoginScreen> {
           sending = false;
           error = true;
           msg = data["message"]; //error message from server
+          if (mounted) {
+            errmsg(context, msg);
+          }
         });
       } else {
         //after write success, make fields empty
@@ -325,6 +341,9 @@ class _LoginScreenState extends State<LoginScreen> {
         error = true;
         msg = "Có lỗi khi thực hiện gửi dữ liệu.";
         sending = false;
+        if (mounted) {
+          errmsg(context, errormsg);
+        }
         //mark error and refresh UI with setState
       });
     }
@@ -368,6 +387,9 @@ class _LoginScreenState extends State<LoginScreen> {
           showprogress = false; //don't show progress indicator
           error = true;
           errormsg = "Something went wrong.";
+          if (mounted) {
+            errmsg(context, errormsg);
+          }
         }
       }
     } else {
@@ -375,6 +397,9 @@ class _LoginScreenState extends State<LoginScreen> {
         showprogress = false; //don't show progress indicator
         error = true;
         errormsg = "Error during connecting to server.";
+        if (mounted) {
+          errmsg(context, errormsg);
+        }
       });
     }
   }
@@ -399,12 +424,18 @@ class _LoginScreenState extends State<LoginScreen> {
         showprogress = false; //don't show progress indicator
         error = true;
         errormsg = "Something went wrong.";
+        if (mounted) {
+          errmsg(context, errormsg);
+        }
       }
     } else {
       setState(() {
         showprogress = false; //don't show progress indicator
         error = true;
         errormsg = "Error during connecting to server.";
+        if (mounted) {
+          errmsg(context, errormsg);
+        }
       });
     }
   }
@@ -437,12 +468,18 @@ class _LoginScreenState extends State<LoginScreen> {
         showprogress = false; //don't show progress indicator
         error = true;
         errormsg = "Something went wrong.";
+        if (mounted) {
+          errmsg(context, errormsg);
+        }
       }
     } else {
       setState(() {
         showprogress = false; //don't show progress indicator
         error = true;
         errormsg = "Error during connecting to server.";
+        if (mounted) {
+          errmsg(context, errormsg);
+        }
       });
     }
   }
@@ -612,7 +649,11 @@ errmsg(BuildContext context, String text) {
             shrinkWrap: true,
             children: <Widget>[
               const SizedBox(height: 20),
-              const Center(child: Text('Thông báo', style: TextStyle(fontWeight: FontWeight.bold),)),
+              const Center(
+                  child: Text(
+                'Thông báo',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              )),
               const SizedBox(height: 20),
               Center(child: Text(text)),
               const SizedBox(height: 10),
@@ -627,6 +668,7 @@ errmsg(BuildContext context, String text) {
         );
       });
 }
+
 otpmsg(BuildContext context, String text) {
   //error message widget.
   showDialog(
@@ -635,13 +677,17 @@ otpmsg(BuildContext context, String text) {
         return Dialog(
           insetPadding: const EdgeInsets.symmetric(horizontal: 60),
           shape:
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
           elevation: 10,
           child: ListView(
             shrinkWrap: true,
             children: <Widget>[
               const SizedBox(height: 20),
-              const Center(child: Text('Thông báo', style: TextStyle(fontWeight: FontWeight.bold),)),
+              const Center(
+                  child: Text(
+                'Thông báo',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              )),
               const SizedBox(height: 20),
               Center(child: Text(text)),
               const SizedBox(height: 10),
@@ -657,6 +703,7 @@ otpmsg(BuildContext context, String text) {
         );
       });
 }
+
 checkbox() {
   return Row(
     children: const [

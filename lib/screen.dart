@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('Khảo sát CNTT'),
       ),
-      drawer: const NavigationDrawer(),
+      drawer: const NavigationDrawer1(),
       body: CustomScrollView(
     slivers: [
     SliverFillRemaining(
@@ -54,7 +54,7 @@ class KhaoSatDVScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Báo cáo tổng hợp"),
         ),
-        drawer: const NavigationDrawer(),
+        drawer: const NavigationDrawer1(),
         body: SingleChildScrollView(
           padding: const EdgeInsets.all(20.0),
           child: Column(mainAxisSize: MainAxisSize.max, children: const [
@@ -98,7 +98,7 @@ class _BaoCaoTongHopScreenState extends State<BaoCaoTongHopScreen> {
         appBar: AppBar(
           title: const Text("Báo cáo tổng hợp"),
         ),
-        drawer: const NavigationDrawer(),
+        drawer: const NavigationDrawer1(),
         body: SingleChildScrollView(
           padding: const EdgeInsets.all(20.0),
           child: Column(mainAxisSize: MainAxisSize.max, children: const [
@@ -142,7 +142,7 @@ class _BaoCaoChiTietScreenState extends State<BaoCaoChiTietScreen> {
         appBar: AppBar(
           title: const Text("Báo cáo chi tiết cuộc gọi"),
         ),
-        drawer: const NavigationDrawer(),
+        drawer: const NavigationDrawer1(),
         body: SingleChildScrollView(
           padding: const EdgeInsets.all(20.0),
           child: Column(mainAxisSize: MainAxisSize.max, children: const [
@@ -179,7 +179,7 @@ class _CuocGoiHoTroScreenState extends State<CuocGoiHoTroScreen> {
         appBar: AppBar(
           title: const Text("Thêm mới cuộc gọi"),
         ),
-        drawer: const NavigationDrawer(),
+        drawer: const NavigationDrawer1(),
         body: SingleChildScrollView(
           padding: const EdgeInsets.all(20.0),
           child: Column(mainAxisSize: MainAxisSize.max, children: const [
@@ -225,7 +225,7 @@ class _GoiKiemScreenState extends State<GoiKiemScreen> {
         appBar: AppBar(
           title: const Text("Gọi kiểm"),
         ),
-        drawer: const NavigationDrawer(),
+        drawer: const NavigationDrawer1(),
         body: SingleChildScrollView(
           padding: const EdgeInsets.all(20.0),
           child: Column(mainAxisSize: MainAxisSize.max, children: const [
@@ -258,7 +258,7 @@ class _KetQuaScreennState extends State<KetQuaScreen> {
         appBar: AppBar(
           title: const Text('Khảo sát dịch vụ'),
         ),
-        drawer: const NavigationDrawer(),
+        drawer: const NavigationDrawer1(),
         body: Column(
             children: const [KetQuaSection()]));
   }
@@ -297,7 +297,7 @@ class _DanhMucDVScreenState extends State<DanhMucDVScreen> {
         appBar: AppBar(
           title: const Text('Quản lý dịch vụ'),
         ),
-        drawer: const NavigationDrawer(),
+        drawer: const NavigationDrawer1(),
         body: Column(
           children: [
             Padding(
@@ -337,7 +337,7 @@ class _ThemDVScreenState extends State<ThemDVScreen> {
         appBar: AppBar(
           title: const Text('Thêm mới dịch vụ'),
         ),
-        drawer: const NavigationDrawer(),
+        drawer: const NavigationDrawer1(),
         body: Column(
           children: const [
             ThemDVSection()
@@ -369,7 +369,7 @@ class _ThemUserScreenState extends State<ThemUserScreen> {
         appBar: AppBar(
           title: const Text('Thêm mới người dùng'),
         ),
-        drawer: const NavigationDrawer(),
+        drawer: const NavigationDrawer1(),
         body: Column(
           children: const [
             ThemUserSection()
@@ -401,7 +401,7 @@ class _GanUserScreenState extends State<GanUserScreen> {
         appBar: AppBar(
           title: const Text('Phân quyền người dùng'),
         ),
-        drawer: const NavigationDrawer(),
+        drawer: const NavigationDrawer1(),
         body: Column(
           children: const [
             ThemUserSection()
@@ -424,7 +424,7 @@ class _DanhSachCuocGoiScreenState extends State<DanhSachCuocGoiScreen> {
         appBar: AppBar(
           title: const Text('Danh sách cuộc gọi'),
         ),
-        drawer: const NavigationDrawer(),
+        drawer: const NavigationDrawer1(),
         body: Column(
           children: [
             Padding(
@@ -483,7 +483,7 @@ class _NHCauHoiScreenState extends State<NHCauHoiScreen> {
         appBar: AppBar(
           title: const Text('Ngân hàng câu hỏi'),
         ),
-        drawer: const NavigationDrawer(),
+        drawer: const NavigationDrawer1(),
         body: SingleChildScrollView(
           padding: const EdgeInsets.all(20.0),
           child: Column(mainAxisSize: MainAxisSize.max, children: const [
@@ -508,7 +508,7 @@ class _AdminScreenState extends State<AdminScreen> {
         appBar: AppBar(
           title: const Text('Quản trị tài khoản'),
         ),
-        drawer: const NavigationDrawer(),
+        drawer: const NavigationDrawer1(),
         body: Column(
           children: [
             Padding(

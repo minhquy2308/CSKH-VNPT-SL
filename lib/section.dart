@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:vnptsl/ho_tro.dart';
 import 'package:vnptsl/user.dart';
 import 'dich_vu.dart';
 import 'package:http/http.dart' as http;
@@ -273,6 +274,7 @@ class _CuocGoiHoTroSectionState extends State<CuocGoiHoTroSection> {
         donVictl.clear();
         noiDungctl.clear();
         ghiChuctl.clear();
+        getHotros();
         //after write success, make fields empty
 
         setState(() {
@@ -614,7 +616,7 @@ class _TrangThaiDropdownState extends State<TrangThaiDropdown> {
 
 validate(BuildContext context) {
   iddichvu =
-      dropdownValue.toString().replaceAll(RegExp(r'[^0-9]'), '');
+      dropdownValue.toString().replaceAll(RegExp(r'\D'), '');
   if (hotenKHctl.text.isEmpty ||
       sdtctl.text.isEmpty ||
       donVictl.toString().isEmpty ||
@@ -648,7 +650,7 @@ validate(BuildContext context) {
 }
 
 validateGoiKiem(BuildContext context) {
-  trangthai = dropdownTrangThaiValue.toString().replaceAll(RegExp(r'[^0-9]'), '');
+  trangthai = dropdownTrangThaiValue.toString().replaceAll(RegExp(r'\D'), '');
   if (lydo2ctl.text.isEmpty ||
       lydoctl.text.isEmpty ||
       khaosat2ctl.text.isEmpty ||
